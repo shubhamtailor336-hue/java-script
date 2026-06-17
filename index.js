@@ -20,6 +20,7 @@ age="25";
 console.log(age);
 
 const city="ujjian";
+
 console.log(city);
 
 // Array
