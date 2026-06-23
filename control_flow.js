@@ -130,3 +130,84 @@ else if(year%4 && year%100!==0){
 else{
 console.log("Not leap year")
 }
+
+// student school form  
+
+let agee =20;
+ let markss = 70;
+ let attendence = "75%";
+ let grade = 80;
+
+
+if((agee>=18&&markss>=60&&grade>=90&&attendence>="75%" )){
+    console.log(" you are eligible")
+}
+else if(agee<18){
+    console.log("age requirement not met")
+}
+else if(markss<60){
+    console.log("marks requirtment not met")
+}
+else if(90<grade) {
+console.log("grade requirment not met")
+}
+else{
+    console.log("attendence requirmetn not met")
+}
+
+// ATM system
+
+let balance = 10000;
+let pin = 1234;
+let enteredPin = 1234;
+let withdrawAmount = 3000;
+let depositAmount = 2000;
+let choice = 2; // 1 = Check Balance, 2 = Withdraw, 3 = Deposit
+
+  // 1. PIN CHECK
+if (enteredPin === pin) {
+    console.log("Login Successful");
+
+    // 2. MENU SYSTEM
+    if (choice === 1) {
+        console.log("Your Balance is:", balance);
+    }
+
+    else if (choice === 2) {
+        if (withdrawAmount > 0 && withdrawAmount <= balance) {
+            balance -= withdrawAmount;
+            console.log("Withdraw Successful");
+            console.log("Remaining Balance:", balance);
+        } else {
+            console.log(" Invalid Amount");
+        }
+    }
+
+    else if (choice === 3) {
+        // Deposit Logic
+        if (depositAmount > 0) {
+            balance += depositAmount;
+            console.log("Deposit Successful");
+            console.log("Updated Balance:", balance);
+        } else {
+            console.log("Invalid Deposit Amount");
+        }
+    }
+
+    else {
+        console.log("Invalid Choice");
+    }
+
+    // 3. ACCOUNT TYPE CHECK
+    
+    if (balance >= 5000) {
+        console.log("Premium Account");
+    } else {
+        console.log("Normal Account");
+    }
+
+} else {
+    console.log("Wrong PIN ");}
+
+
+
