@@ -1,3 +1,5 @@
+// topic:- 01 if else else if,,,,,,,,,,,
+
 let age = 20;
 
 if(age<=12&&age<=20){
@@ -187,12 +189,12 @@ console.log("-".repeat(60))
 // vote 
 
 let ageee = 18;
-let education = "10th";
+let education = "12th";
 let city = "ujjain";
 let state = "UP";
 let country = "india";
 
-if((ageee>18&&education==="11th" )&&(city="ujain"||education ==="uk")){
+if((ageee<=18&&education==="12th" )&&(city="ujain"||education ==="MP")){
 console.log( "you are eligible for vote")
 }
  else if (ageee < 18) {
@@ -211,8 +213,94 @@ else {
     console.log("You are eligible for vote");
 }
 
+// topic:- 02 switch statement,,,,,,,,,,,,,,,,,,,,,,,,
+
+// example 01
+let day = 3;
+switch(day){
+
+    case 1:
+        console.log("Monday")
+        break;
+    case 2:
+        console.log("Tuesday")    
+        break;
+    case 3:
+        console.log("Wednesday")    
+        break;
+        default:
+        console.log("invailid day")
+}
+
+// example 02
+
+let option = 1;
+switch(option){
+    case 1:
+        console.log("check balance");
+        break;
+    case 2:
+        console.log(" case withdraw");
+        break;
+    case 3:
+    console.log("case deposit");
+        break;
+    case 4:
+        console.log("mini Statement");
+        break;
+    default:
+        console.log("invailid statement");    
+}
+console.log("-".repeat(70));
+
+// 3. Looping Statements,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+for(let i = 1; i<=30 ; i++){
+    console.log(`Student ${i} is present`)
+}
+console.log('-'.repeat(70))
+
+let days = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'];
+
+for(i=0;i<days.length;i++){
+    console.log(days[i])
+
+}
+
+console.log('-'.repeat(70))
 
 
+let Month = ['Jan','Feb','March','April','May','Jun','July','Aug','Sep','Oct','Nev','Dec'];
+
+for(i=0;i<Month.length;i++){
+    console.log(Month[i])
+
+}
+
+console.log('-'.repeat(70))
+
+for( let e = 1; e <= 10; e++){
+    c = 2;
+    console.log(`${c}*${e} = ${c*e}`)
+}
+
+
+console.log('-'.repeat(70))
+
+
+for ( let b = 1; b <= 10; b++){
+    let c = 5;
+    console.log(`${c} * ${b} = ${c * b} `);
+};
+
+let balance1 = 5000;
+
+while (balance1 > 0) {
+    console.log("Remaining Balance:", balance1);
+    balance1 -= 2000;
+}
+
+console.log("Balance Finished");
 
 
     

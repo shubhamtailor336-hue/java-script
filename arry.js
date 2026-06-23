@@ -165,3 +165,5 @@ console.log(number8);
 
 numbers6.reverse();
 console.log(numbers6);
+
+
