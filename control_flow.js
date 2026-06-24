@@ -213,6 +213,38 @@ else {
     console.log("You are eligible for vote");
 }
 
+let dayys = "saturday";
+let seat = 6;
+
+if(dayys==="monday"&&seat>0)
+{
+    console.log("Ticket Booked Successfully")
+}
+else if(dayys==="tuesday"&&seat>0)
+{
+    console.log("Ticket Booked Successfully")
+}
+else if(dayys==="wednesday"&&seat>0)
+{
+    console.log("Ticket Booked Successfully")
+}
+else if(dayys==="thursday"&&seat>0)
+{
+    console.log("Ticket Booked Successfully")
+}
+ else if(dayys==="friday"&&seat>0)
+{
+    console.log("Ticket Booked Successfully")
+}
+else if(dayys==="saturday"||seat==0)
+{
+    console.log("Booking closed , try next week bcz seats are  not available")
+}
+else{
+    console.log("Booking closed , try next week")
+}
+
+
 // topic:- 02 switch statement,,,,,,,,,,,,,,,,,,,,,,,,
 
 // example 01
@@ -252,55 +284,25 @@ switch(option){
         console.log("invailid statement");    
 }
 console.log("-".repeat(70));
+let daysss = "Monday";
 
-// 3. Looping Statements,,,,,,,,,,,,,,,,,,,,,,,,,,,
+switch(daysss) {
+    case "Monday":
+    case "Tuesday":
+    case "Wednesday":
+    case "Thursday":
+    case "Friday":
+        console.log("Ticket Booking Successful");
+        break;
 
-for(let i = 1; i<=30 ; i++){
-    console.log(`Student ${i} is present`)
+    case "Saturday":
+    case "Sunday":
+        console.log("Booking Closed. Try Again Next Week");
+        break;
+
+    default:
+        console.log("Invalid Day");
 }
-console.log('-'.repeat(70))
-
-let days = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'];
-
-for(i=0;i<days.length;i++){
-    console.log(days[i])
-
-}
-
-console.log('-'.repeat(70))
-
-
-let Month = ['Jan','Feb','March','April','May','Jun','July','Aug','Sep','Oct','Nev','Dec'];
-
-for(i=0;i<Month.length;i++){
-    console.log(Month[i])
-
-}
-
-console.log('-'.repeat(70))
-
-for( let e = 1; e <= 10; e++){
-    c = 2;
-    console.log(`${c}*${e} = ${c*e}`)
-}
-
-
-console.log('-'.repeat(70))
-
-
-for ( let b = 1; b <= 10; b++){
-    let c = 5;
-    console.log(`${c} * ${b} = ${c * b} `);
-};
-
-let balance1 = 5000;
-
-while (balance1 > 0) {
-    console.log("Remaining Balance:", balance1);
-    balance1 -= 2000;
-}
-
-console.log("Balance Finished");
 
 
     

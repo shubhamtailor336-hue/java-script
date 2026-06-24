@@ -262,4 +262,31 @@ console.log(".".repeat(5)); // .....
 console.log("*".repeat(5)); // *****
 
 
+// 16. match()   
 
+// Find all digits
+
+let text3 = "Order ID: 12345";
+console.log(text3.match(/\d+/)); // ["12345"]
+
+ console.log("-".repeat(70))
+// 17. padStart()
+
+let invoice = "25";
+console.log(invoice.padStart(5, "@")); // 00025
+
+
+let num = "34";
+console.log( num.padStart(10,"*"));
+
+// 18. padEnd()
+
+// Align product names
+
+let product = "iPhone";
+console.log(product.padEnd(10, ".")); // iPhone....
+
+let name2 = "shubham";
+console.log(name2.padEnd(10, " ")); // "John      "
+
+// 19. search()
