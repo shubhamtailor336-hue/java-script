@@ -14,14 +14,38 @@ console.log(a);
 var b="30";
 console.log(b);
 
+var name = "shubham";
+console.log(name)
+
+
+var name = "shubham";
+console.log(name)
+
+var name = "ashu";
+console.log(name)
+ console.log("-".repeat(60))
+
 // let keyword
 let age ="24";
-age="25";
+age="40";
+
 console.log(age);
 
-const city="ujjian";
 
+let num = 12;
+console.log(num);
+
+ console.log("-".repeat(60))
+// const ley word
+
+const city="ujjian";
 console.log(city);
+
+const village = "Lasudiya surajmal";
+console.log(village);
+
+
+console.log("-".repeat(60))
 
 // Array
 
@@ -31,15 +55,20 @@ let frnds = ["shubham", "ashu", "krish", 34,78 ,"90","45"];
 console.log(arr);
 console.log( frnds);
 
+console.log("-".repeat(60))
 // Object
+
 let obj = {
     name : "shubham",
     age : 19,
     dob : "08 jan 2007"
 };
 
-console.log(obj);
-// function 
+ console.log(obj);
+
+ console.log("-".repeat(60))
+ 
+ // function 
 
 function reg1(num){
  console.log("shubham :" ,num);

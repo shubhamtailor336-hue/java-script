@@ -81,6 +81,15 @@ let cart = {
 for( let item in cart){
     console.log(`${item}:${cart[item]}`)
 }
+console.log(",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,")
+let studentID ={
+    name: "sandeep",
+    education:"B.tech",
+    year: "final year"
+}
+for(let key in studentID){
+    console.log(` your ${key}:${studentID[key]}`)
+}
 
 console.log("-".repeat(70))
 
@@ -97,6 +106,14 @@ let post = ["intern","devloper","softwear engineer","senior devloper"]
 for(let key of post){
     console.log(key)
 }
+
+ console.log("-".repeat(70))
+let position = ["teacher","moniter","principle","director","HOD"]
+
+for(let key of position){
+    console.log(key);
+}
+
 
     
 
