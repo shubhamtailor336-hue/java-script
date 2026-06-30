@@ -112,9 +112,11 @@ let frnd=[ "ashu","krish","dhruv","dipu","dipu","dipu","shubham"];
 let frnds= frnd.forEach(dost=>console.log(dost=="dipu"));
 
 // 2.map() method
+
 let table =[1,2,3,4,5,6,7,8,9,10];
  let twotable = table.map(num=>num*2);
  console.log(twotable);
+
  let threetable=table.map(num=>num*3);
  console.log(threetable);
 
@@ -124,6 +126,8 @@ let table =[1,2,3,4,5,6,7,8,9,10];
 
 //  let five=[5,50,500,5000,50000,500000];
 //  let five1=five.map(num=console.log(num>20));
+
+console.log("/".repeat(60))
 
 //3.filter method
 
