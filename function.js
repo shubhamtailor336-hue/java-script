@@ -287,4 +287,56 @@ function sub(){
 }
 calculate(10,20,sub);  // Output: "30" followed by "Calculation completed "
 
+// ✅ 1. Anonymous Functions
 
+
+const greet1 = function() {
+  console.log("Hello!");
+};
+const sayHi = function() {
+
+  console.log("Hi there!");
+
+};
+
+sayHi(); // Output: Hi there!
+
+const numbers = [1, 2, 3];
+
+const squares = numbers.map(function(num) {
+  return num * num;
+});
+
+console.log(squares); // Output: [1, 4, 9]
+
+(function() {
+  console.log("I am IIFE!");
+})();
+
+(function() {
+  console.log("This runs immediately!");
+})();
+
+(function(){
+    console.log("IIFE executed!");
+})()
+
+const counter = (function() {
+  let count = 0;
+  return function() {
+    count++;
+    return count;
+  };
+})();
+
+console.log(counter()); // 1
+console.log(counter()); // 2
+
+function multiplier(factor) {
+  return function(num) {
+    return num * factor;
+  };
+}
+
+const double = multiplier(2);
+console.log(double(5)); // Output: 10

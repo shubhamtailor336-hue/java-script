@@ -85,3 +85,18 @@ Object.seal(sealed);
 sealed.name = "mumma"; // Allowed
 delete sealed.name; // Not allowed
 console.log(sealed); // Output: { name: "mumma" }
+
+
+let campus = {
+    name: "SGSITS",
+    location: "Ujjain",
+    currentStudents: 5000,
+    course : "B.Tech"
+}
+Object.seal(campus);
+campus.name = "SGSITS Ujjain";
+campus.location = "Indore"; // Not allowed
+console.log(campus.name); // Output: SGSITS Ujjain
+
+
+

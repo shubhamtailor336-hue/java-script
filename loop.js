@@ -114,6 +114,12 @@ for(let key of position){
     console.log(key);
 }
 
+let fruits = ["apple","banana","mango","grapes","orange"]
+
+for(let key of fruits){
+    console.log(key)
+}
+
 
     
 
