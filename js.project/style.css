@@ -1,0 +1,84 @@
+* { box-sizing: border-box; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f6f7fb;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+header {
+  background: #fff;
+  padding: 16px 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+header h1 { margin: 0; }
+
+.main {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  flex: 1 1 60%;
+}
+
+.product-card {
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+.product-card h3 {
+  font-size: 14px;
+  margin: 6px 0;
+  text-align: center;
+}
+.product-card .price { font-weight: bold; margin-bottom: 8px; }
+.product-card .actions { margin-top: auto; }
+
+.add-btn {
+  background: #2b8aef;
+  color: #fff;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.add-btn:hover { opacity: 0.95; }
+
+.cart {
+  width: 320px;
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  height: fit-content;
+}
+.cart h2 { margin-top: 0; }
+.cart-item { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid #eee; }
+.cart-item:last-child { border-bottom: none; }
+.cart-item-left { display:flex; gap: 8px; align-items: center; }
+.cart-item-left img { width:48px; height:48px; object-fit:contain; }
+.cart-item-actions { display:flex; gap:6px; align-items:center; }
+.qty-btn { padding:6px 8px; background:#eee; border: none; border-radius:4px; cursor:pointer; }
+.remove-btn { padding:6px 8px; background:#ff6b6b; color:#fff; border:none; border-radius:4px; cursor:pointer; }
+.cart-footer { margin-top: 12px; display:flex; justify-content:space-between; align-items:center; }
+#clearCartBtn { background:#ff6b6b; color:#fff; border:none; padding:6px 10px; border-radius:6px; cursor:pointer; }
+
+@media (max-width: 800px) {
+  .main { flex-direction: column; }
+  .cart { width: 100%; }
+}

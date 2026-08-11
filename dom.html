@@ -1,0 +1,290 @@
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+     <button id="btn1">Button 1</button>
+ <button id="btn2">Button 2</button>
+ <p id="result"></p>
+ <script>
+   document.addEventListener("click", function(event) {
+     document.getElementById("result").innerText = "You clicked: " + event.target.innerText;
+   });
+ </script>
+  <div id="colorBox" style="width:100px;height:100px;background:gray;"></div>
+ <script>
+   document.getElementById("colorBox").addEventListener("mousemove", function() {
+     this.style.backgroundColor = "lightblue";
+   });
+ </script> 
+
+  <ul id="list">
+   <li>Item 1</li>
+   <li>Item 2</li>
+   <li>Item 3</li>
+ </ul>
+
+ <script>
+  let list = document.getElementById("list");
+  console.log("total children:", list.children.length);
+ </script>
+ <div id="container">
+  <p>
+    this is a first paragrapgh
+  </p>
+  <p>
+    this is  second paragraph 
+  </p>
+
+ </div>
+
+ <script>
+  let container = document.getElementById("container");
+  container.children[0].style.color ="red";
+  container.children[1].style.color ="blue";
+ </script>
+
+ <u id="menu">
+  <li>Home</li>
+  <li>About</li>
+  <li>Contact</li>
+ </u>
+
+ <script>
+  let menu = document.getElementById("menu");
+  for(let child of menu.children){
+    console.log(child.innerText);
+
+  }
+
+ </script>
+ 3. nextElementSibling & previousElementSibling
+ let next = element.nextElementSibling;
+let prev = element.previousElementSibling; -->
+<!-- 
+<p id="para1"> Tis is a paragrapgh </p>
+<p id="para2"> This is a paragraph </p> 
+<script>
+  let firstpara = document.getElementById("para2");
+firstpara.previousElementSibling.style.backgroundColor = "yellow";
+</script>
+
+ <button id="btn1">Button 1</button>
+ <button id="btn2">Button 2</button>
+ <script>
+   let secondButton = document.getElementById("btn2");
+   console.log(secondButton.previousElementSibling.innerText); // Logs "Button 1"
+ </script>
+
+ <button id="toggle">Toggle Next</button>
+ <p id="message">This is a message.</p>
+ <script>
+   document.getElementById("toggle").addEventListener("click", function() {
+     let next = this.nextElementSibling;
+     next.style.display = next.style.display === "none" ? "block" : "none";
+   });
+ </script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dom selector</title>
+</head>
+<body>
+
+  <!-- idselector => document.getElementById("idname"); -->
+  
+   <button id="myButton" onclick="changeText()">Click Me</button>
+   <input type="text" id="myInput" placeholder="Enter text here">
+   <button id="myInputButton" onclick="updateText()">Update Text</button>
+ <script>
+   function changeText() {
+     document.getElementById("myButton").style.background = "lightblue";
+     document.getElementById("myButton").innerText = "Clicked!";
+     document.getElementById("myButton").style.color = "white";
+     document.getElementById("myButton").style.fontSize = "20px";
+     document.getElementById("myButton").style.padding = "10px 20px";
+    document.getElementById("myButton").style.border = "none";
+
+   }
+   function updateText(){
+     document.getElementById("myInput").style.border = "2px solid red";
+     document.getElementById("myInput").style.padding = "5px";
+     document.getElementById("myInput").style.fontSize = "16px";
+
+   }
+ </script>
+
+ <!-- class selector => document.getElementsByClassName("classname"); -->
+
+ <div class="myClass">
+  "This is a div with class "myClass"
+<p class="para">This is a paragraph with class "para"</p>
+</p>
+</div>
+<button class="myClass" onclick="changeClassText()">Click Me</button>
+
+<button class="btn" onclick="changeParaText()">change text para</button>
+<script>
+  function changeClassText() {
+    let elements = document.getElementsByClassName("myClass");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].style.backgroundColor = "lightgreen";
+      elements[i].style.padding = "10px";
+      elements[i].style.fontSize = "18px";
+      elements[i].style.border = "3px solid yellow";
+    }
+  }
+  document.getElementsByClassName("para")[0].style.color = "blue";
+  function changeParaText() {
+    let paraElements = document.getElementsByClassName("para");
+    for (let i = 0; i < paraElements.length; i++) {
+      paraElements[i].style.color = "red";
+      paraElements[i].style.fontSize = "20px";
+      paraElements[i].style.fontWeight = "bold";
+    }
+  }
+
+</script>
+ <div class="box">Box 1</div>
+ <div class="box">Box 2</div>
+ <button onclick="toggleBoxes()">Toggle Boxes</button>
+ <script>
+   function toggleBoxes() {
+     let boxes = document.getElementsByClassName("box");
+     for (let i = 0; i < boxes.length; i++) {
+       boxes[i].style.display = boxes[i].style.display === "none" ? "block" : "none";
+     }
+   }
+ </script>
+
+  <a href="#">Link 1</a>
+ <a href="#">Link 2</a>
+ <p id="linkCount"></p>
+ <script>
+   let links = document.getElementsByTagName("a");
+   document.getElementById("linkCount").innerText = "Total Links: " + links.length;
+ </script>
+
+ 
+ <img src="https://images.unsplash.com/photo-1786359410265-86e20d5da810?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D">
+ <img src="https://images.unsplash.com/photo-1786359410265-86e20d5da810?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D">
+ <script>
+   let images = document.getElementsByTagName("img");
+   for (let i = 0; i < images.length; i++) {
+     images[i].style.border = "2px solid black";
+     images[i].style.margin = "10px";
+     images[i].style.padding = "5px";
+     images[i].style.height = "100px";
+     images[i].style.width = "200px";
+   }
+ </script>
+
+
+
+
+<p class="myParagraph">This is a paragraph with an ID.</p>
+<p class="myParagraph">This is a paragraph with a class.</p>
+
+<script>
+
+  let paragraph = document.querySelector(".myParagraph").style.color = "blue";
+  let para1 = document.querySelector(".myParagraph").style.fontSize = "20px";
+</script>
+
+<div id="box" style="display:none;">Hello World!</div>
+
+<script>
+let div = document.getElementById("box");
+
+console.log("innerText:", div.innerText);     // ❌ Empty string
+console.log("textContent:", div.textContent); // ✅ "Hello World!"
+</script>
+
+<div id="box">
+  <p>Hello</p>
+  <p>World</p>
+</div>
+
+<script>
+let divv = document.getElementById("box");
+
+console.log("innerText:", divv.innerText);     
+// "Hello\nWorld" (slow because it checks styling)
+
+console.log("textContent:", divv.textContent); 
+// "Hello\nWorld" (faster, no styling check)
+</script>
+
+<div id="box1"></div>
+
+<script>
+document.getElementById("box1").innerHTML = "Click here: <a href='https://google.com'>Google</a>";
+</script>
+
+
+<div id="box3"></div>
+ 
+<script>
+  document.getElementById("box3").innerHTML = "<ul><ol>Item 1</ol><li>Item 2</li><li>Item 3</li></ul>";
+  document.getElementById("box3").style.border = "2px solid black";
+  document.getElementById("box3").style.padding = "10px";
+  // document.getElementById("box3").innerHTML = "click herre: <a href='https://google.com'>Google</a>";
+</script>
+
+<img id="myImg" src="https://images.unsplash.com/photo-1786359410265-86e20d5da810?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D" width="100">
+
+<script>
+let img = document.getElementById("myImg");
+
+// get old src
+console.log(img.getAttribute("src"));   // "https://images.unsplash.com/photo-1786359410265-86e20d5da810?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D"
+
+// set new src
+img.setAttribute("src", "https://images.unsplash.com/photo-1786359410265-86e20d5da810?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D");
+</script>
+
+<a id = "mylink" href ="arry.js">Click here</a>
+<script>
+  let link = document.getElementById("mylink");
+  console.log(link.getAttribute("href")); // "arry.js"
+
+  link.setAttribute
+  ("href", "https://www.google.com");
+  console.log(link.getAttribute("href")); // "https://www.google.com"
+  </script>
+
+<button id="click" onclick="handleClick()">Click me</button>;
+<script>
+  function handleClick() {
+    let button = document.getElementById("click");
+    button.setAttribute("disabled", "true");
+    button.innerText = "Clicked!";
+  }
+</script>
+
+ <div id="box3" style="width:100px;height:100px;background:red;"></div>
+ <script>
+   let box5 = document.getElementById("box3");
+   box5.onmouseover = function() {
+     box5.style.width = "200px";
+     box5.style.height = "200px";
+   };
+   box5.onmouseout = function() {
+     box5.style.width = "100px";
+     box5.style.height = "100px";
+   };
+ </script>
+
+</body>
+</html>

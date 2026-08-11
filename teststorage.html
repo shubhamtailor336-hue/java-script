@@ -1,0 +1,64 @@
+<!-- question.01 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <input type="text" id="name" placeholder="Enter your name">
+    <button id="saveBtn">Save Name</button>
+
+
+     <h2 id="output"></h2>
+    <button id="showBtn">Show Name</button>
+
+
+    <button id="loginBtn">Login</button>
+    <p id="status">Not Logged In</p>
+
+    <!-- question.01 -->
+
+    <script>
+        let  nameInput = document.getElementById("name");
+        let  saveBtn = document.getElementById("saveBtn");
+        saveBtn.addEventListener("click", function () {
+            let username = nameInput.value;
+            localStorage.setItem("username", username);
+            alert("Your name saved successfully!");
+        });
+    </script>
+
+    
+    <!-- question.02-->
+
+    <script>
+        let nameoutput = document.getElementById("output");
+        let show = document.getElementById("showBtn");
+
+        show.addEventListener("click" , function(){
+            let username = localStorage.getItem("username");
+            output.innerText = username;
+    
+        });
+    </script>
+    <!-- question.03-->
+
+    <script>
+        let loginBtn = document.getElementById("loginBtn");
+        let status = document.getElementById("status");
+
+        status.addEventListener("click" , function(){
+            sessionStorage.setItem("isLoggedIn" , "true");
+            status.innerText = "Logged In"
+        });
+    </script>
+
+
+
+
+</body>
+</html>

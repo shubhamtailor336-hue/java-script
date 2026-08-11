@@ -1,0 +1,92 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Demo Project</title>
+  <style>
+    #box {
+      border: 2px solid black;
+      padding: 20px;
+      width: 250px;
+      margin-bottom: 10px;
+    }
+    .highlight {
+      background-color: yellow;
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Interactive Playground</h2>
+
+  <!-- Main Box -->
+  <div id="box">
+    <p id="text">Hello <b>World</b></p>
+    <img id="myImg" src="https://via.placeholder.com/100" width="100">
+    <br>
+    <a id="myLink" href="https://google.com" target="_blank">Visit Google</a>
+  </div>
+
+  <!-- Buttons -->
+  <button onclick="changeText()">Change Text (innerText)</button>
+  <button onclick="showText()">Show Text (innerText vs textContent)</button>
+  <button onclick="useInnerHTML()">Change with innerHTML</button>
+  <button onclick="changeImage()">Change Image (setAttribute)</button>
+  <button onclick="changeLink()">Change Link (setAttribute)</button>
+  <button onclick="addClass()">Add Class (setAttribute)</button>
+  <button onclick="changeStyle()">Change Style (.style)</button>
+
+  <script>
+    // 1. Change text using innerText
+    function changeText() {
+      document.getElementById("text").innerText = "This is changed text!";
+    }
+
+    // 2. Show difference between innerText and textContent
+    function showText() {
+      let p = document.getElementById("text");
+      alert("innerText: " + p.innerText + "\ntextContent: " + p.textContent);
+    }
+
+    // 3. Use innerHTML
+    function useInnerHTML() {
+      document.getElementById("text").innerHTML = "Now using <i>innerHTML</i>!";
+    }
+
+    // 4. Change image using setAttribute()
+    function changeImage() {
+      let img = document.getElementById("myImg");
+      img.setAttribute("src", "https://via.placeholder.com/150");
+      img.setAttribute("width", "150");
+    }
+
+    // 5. Change link using setAttribute()
+    function changeLink() {
+      let link = document.getElementById("myLink");
+      link.setAttribute("href", "https://youtube.com");
+      link.innerText = "Visit YouTube";
+    }
+
+    // 6. Add class dynamically
+    function addClass() {
+      let div = document.getElementById("box");
+      div.setAttribute("class", "highlight");
+    }
+
+    // 7. Change style using .style
+    function changeStyle() {
+      let div = document.getElementById("box");
+      div.style.border = "4px dashed blue";
+      div.style.backgroundColor = "lightgreen";
+    }
+  </script>
+
+</body>
+</html>
+
+
