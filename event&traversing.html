@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- event bubbling and event capturing are two phases of event propagation in the DOM (Document Object Model). When an event occurs on an element, it can propagate through the DOM tree in two ways:-->
+
+    <p id
+="para">
+        my name is shubham tailor and i am b.tech 1st year student and i am learning web development and i am learning about event bubbling and event capturing in javascript.
+    </p>
+
+    <p id="para2">
+        this is second paragraph and i am learning about event bubbling and event capturing in javascript.
+
+    </p>
+    <button id="btn1">click me 1</button>
+    <button id="btn2">click me 2</button>
+
+    <button id="btn3" onclick="clickEvent()">click me 3
+    </button>
+    <script>
+         let para = document.getElementById("para");
+        let btn1 = document.getElementById("btn1");
+btn1.addEventListener("click" , function(event){
+    alert("Button 1 clicked");
+event.target.style.color ="blue";
+para.style.color ="red";
+});
+btn1.addEventListener("mouseover",function(event){
+    event.target.style.backgroundColor = "black";
+    event.target.style.color= "white";
+    para.style.color = "green";
+}) 
+
+let btn2 = document.getElementById("btn2");
+btn2.addEventListener("click", function(event){
+    alert("button 2 is clicked")
+    event.target.style.backgroundColor = "red";
+    event.target.style.color =" white";
+para2.style.backgroundColor = "yellow"
+});
+
+   let btn3 = document.getElementById("btn3");
+   function clickEvent(){
+    para.style.fontSize = "30px";
+   }
+
+
+  </script>
+
+   <button onmouseover="changeText(this)" onmouseout="resetText(this)">Hover Me</button>
+ <script>
+   function changeText(element) {
+     element.innerText = "Hovered!";
+   }
+   function resetText(element) {
+     element.innerText = "Hover Me";
+   }
+   function changeText(element) {
+     element.innerText = "Hovered!";
+     element.style.fontSize = "20px";
+     element.style.color = "red";
+   }
+ </script>
+
+
+ <input type="text" id="nameInput" onchange="updatePreview()">
+ <p>Preview: <span id="namePreview"></span></p>
+ <script>
+   function updatePreview() {
+     document.getElementById("namePreview").innerText = document.getElementById("nameInput").value;
+   }
+ </script>
+
+  <form id="myForm">
+   <input type="text" id="username" required>
+   <button type="submit">Submit</button>
+ </form>
+ <script>
+   document.getElementById("myForm").addEventListener("submit", function(event) {
+     event.preventDefault();
+     alert("Form submission prevented!");
+   });
+ </script>
+
+
+
+<!-- traversing in js  -->
+<!-- traversing in js is the process of navigating through the DOM (Document Object Model) tree to access and manipulate elements. The DOM represents the structure of an HTML document as a tree of nodes, where each node corresponds to an element, attribute, or piece of text. Traversing allows developers to move up, down, or sideways in this tree to find specific elements and perform actions on them. -->
+<div class="grandparent1">
+
+
+<div class="parent1">
+   my name is shubham
+    <p class="child1">
+        This is the first child paragraph.
+    </p>
+     <h1 class="heading">Heading</h1>
+</div>
+</div>
+
+<div class="grandparent">
+    <div class="parent2">
+        <p class="child2">This is the second child paragraph.</p>
+    </div>
+</div>
+
+<script>
+    let heading = document.querySelector(".heading");
+     let result= heading.closest(".parent1").style.color = "red"; // Logs <div class="parent1">
+    console.log(result);
+    heading.parentElement.style.color ="blue"; // Logs <div class="parent1">
+
+    let child2 = document.querySelector(".child2");
+    // console.log(child2);
+    console.log(child2.parentElement.parentElement);
+</script>
+ <div id="parent">
+   <p id="child">Hello, World!</p>
+ </div>
+ <script>
+   let child = document.getElementById("child");
+   console.log(child.parentElement); // Logs <div id="parent">
+
+ </script>
+
+
+
+</body>
+</html>
