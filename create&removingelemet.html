@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create remove element</title>
+</head>
+<body>
+<!-- 
+   1 .createElement() method is used to create a new element in the DOM. It takes a string argument that specifies the type of element to be created. For example, document.createElement("p") creates a new paragraph element. -->
+
+    <div id="container">
+        <p>This is a paragraph inside the container.</p>
+    </div>
+
+    <script>
+        let create = document.createElement("p");
+        create.innerText = " This is a new paragraph created using js ";
+        document.getElementById("container").appendChild(create);
+
+        let button = document.createElement("button");
+        button.innerText = "Remove Paragraph";
+        document.getElementById("container").appendChild(button);
+        button.style.color = "red";
+        button.style.backgroundColor = "black";
+        button.style.border = "2px solid red";
+        button.style.padding = "10px";
+        button.style.margin = "10px";
+        button.style.borderRadius = "40px";
+        button.addEventListener("click", function(){
+            document.getElementById("container").removeChild(create);
+        })
+            button.addEventListener("mouseover",function(event){
+                event.target.style.backgroundColor = "red";
+                event.target.style.color ="black";
+                event.target.style.marginBottom ="20px";
+
+            })
+            button.addEventListener("mouseout",function(event){
+                event.target.style.backgroundColor = "black";
+                event.target.style.color ="red";
+                event.target.style.marginBottom ="10px";
+
+            })
+            // document.getElementById("container").removeChild(button);
+    
+    </script>
+<!-- 
+  2.appendChild() method is used to add a new child element to a parent element in the DOM. It takes a single argument, which is the child element to be added. For example, document.getElementById("container").appendChild(create) adds the newly created paragraph element as a child of the container div.
+  3.removeChild() method is used to remove a child element from a parent element in the DOM. It takes a single argument, which is the child element to be removed. For example, document.getElementById("container").removeChild(create) removes the newly created paragraph element from the container div.   -->
+
+  <ul class="list"></ul>
+
+  <script>
+ let list = document.querySelector(".list");
+
+let item1 = document.createElement("li");
+item1.innerText = "pan";
+
+let item2 = document.createElement("li");
+item2.innerText = "pencil";
+
+let item3 = document.createElement("li");
+item3.innerText = "eraser";
+
+list.appendChild(item1);
+list.appendChild(item2);
+list.appendChild(item3);
+
+let btn = document.createElement("button");
+btn.innerText = "remove item";
+list.appendChild(btn);
+
+btn.addEventListener("click", function () {
+
+    if (btn.innerText === "remove item") {
+
+        list.removeChild(item1);
+        list.removeChild(item2);
+        list.removeChild(item3);
+
+        btn.innerText = "add item";
+    }
+
+    else {
+
+        list.insertBefore(item1, btn);
+        list.insertBefore(item2, btn);
+        list.insertBefore(item3, btn);
+
+        btn.innerText = "remove item";
+    }
+});
+
+
+
+  </script>
+
+   <ul id="list">
+   <li id="item1">Item 1</li>
+ </ul>
+ <button onclick="removeItem()">Remove</button>
+ <script>
+   function removeItem() {
+     let item = document.getElementById("item1");
+     item.parentNode.removeChild(item);
+   }
+ </script>
+
+
+<!-- 4. replaceChild() -->
+
+ <div id="container">
+   <p id="old">Old Paragraph</p>
+ </div>
+ <script>
+   let newPara = document.createElement("p");
+   newPara.innerText = "New Paragraph";
+   let oldPara = document.getElementById("old");
+   document.getElementById("container").replaceChild(newPara, oldPara);
+ </script>
+
+ <script>
+let oldElement = document.createElement("p");
+oldElement.innerText = "Old Paragraph";
+
+document.body.appendChild(oldElement);
+
+let newElement = document.createElement("h2");
+newElement.innerText = "New Heading";
+
+oldElement.replaceWith(newElement);
+ 
+
+</script>
+
+
+<div class="box">
+    <p>
+        hey i am shubham tailor 
+    </p>
+    <button> click me!</button>
+</div>
+<script>
+    let box = document.querySelector(".box");
+    let newheading = document.createElement("h2");
+    newheading.innerText ="second new heading";
+    box.appendChild(newheading);
+box.insertBefore(newheading, box.querySelector("button"));
+
+
+</script>
+</body>
+</html>

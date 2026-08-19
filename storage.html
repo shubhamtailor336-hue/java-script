@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Theme Saver Example</title>
+  <style>
+    body.light { background-color: white; color: black; }
+    body.dark { background-color: black; color: white; }
+    button { padding: 10px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+     <h2>Choose Theme</h2>
+     <button onclick="setTheme('light')">Light Mode</button>
+     <button onclick="setTheme('dark')">Dark Mode</button>
+
+  <script>
+    function  setTheme(theme) {
+      localStorage.setItem("theme", theme);
+      document.body.className = theme;
+    }
+    // When the page loads, apply saved theme
+    window.onload = function() {
+      let savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        document.body.className = savedTheme;
+      }
+    };
+  </script>
+
+  <h2>Welcome Page</h2>
+  <input type="text" id="username" placeholder="Enter your name">
+  <button onclick="saveName()">Save</button>
+  <p id="greet"></p>
+
+  <script>
+    function saveName() {
+      let name = document.getElementById("username").value;
+      localStorage.setItem("username", name);
+      showGreeting();
+    }
+
+    function showGreeting() {
+      let user = localStorage.getItem("username");
+      if (user) {
+        document.getElementById("greet").innerText = "Welcome back, " + user + "!";
+      }
+    }
+
+    // Load greeting if user already saved
+    window.onload = showGreeting;
+  </script>
+
+
+  <h2>Registration Form</h2>
+  <label>Name:</label>
+  <input type="text" id="name" placeholder="Enter name"><br><br>
+
+  <label>Email:</label>
+  <input type="email" id="email" placeholder="Enter email"><br><br>
+
+  <button onclick="saveForm()">Save</button>
+
+  <script>
+    function saveForm() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+
+      localStorage.setItem("formData", JSON.stringify({ name, email }));
+      alert("Form data saved!");
+    }
+
+    window.onload = function() {
+      let savedData = JSON.parse(localStorage.getItem("formData"));
+      if (savedData) {
+        document.getElementById("name").value = savedData.name;
+        document.getElementById("email").value = savedData.email;
+      }
+    };
+  </script>
+
+
+
+<input type="text" id="input">
+
+<script>
+  let input = document.getElementById("input");
+  sessionStorage.setItem("username", input.value);
+
+  let username = sessionStorage.getItem("username");
+  console.log(username);
+</script>
+</body>
+</html>

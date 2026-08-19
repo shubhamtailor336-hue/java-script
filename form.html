@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form in js </title>
+</head>
+<body>
+    <form name="my form">
+
+    <input type="text" name="username" placeholder="Enter username">
+
+    <button id="btn" type="button">Click me!</button>
+
+</form>
+
+<script>
+
+let form = document.forms["my form"];
+
+console.log(form.username.value);
+
+let btn = document.getElementById("btn");
+
+btn.addEventListener("click", function(event) {
+
+    event.target.style.color = "red";
+    event.target.style.backgroundColor = "blue";
+
+});
+
+
+</script>
+ <form id="myForm">
+   <input type="text" name="name">
+   <input type="email" name="email">
+ </form>
+ <script>
+   let form1= document.getElementById("myForm");
+   for (let i = 0; i < form1.elements.length; i++) {
+     console.log(form1.elements[i].name); // Logs all input names
+   }
+ </script>
+
+<form action="" id="login">
+    <input type="text" id="username" placeholder="Enter your name">
+    <button  type ="submit" id="btn1"> click me!</button>
+</form>
+
+<script>
+    let forms =document.getElementById("login").addEventListener("submit",function(event){
+event.preventDefault();
+alert("Form submited without reload page")
+    });
+
+</script>
+ <form id="saveForm">
+   <input type="text" id="name" placeholder="Enter Name">
+   <button type="submit">Save</button>
+ </form>
+ <script>
+   document.getElementById("saveForm").addEventListener("submit", function(event) {
+     event.preventDefault();
+     let name = document.getElementById("name").value;
+     localStorage.setItem("userName", name);
+     alert("Name saved successfully!");
+   });
+ </script>
+ <form id="validateForm">
+   <input type="text" id="userInput" placeholder="Enter Text">
+   <button type="submit">Submit</button>
+ </form>
+ <script>
+    let formss = document.getElementById("validateForm").addEventListener("submit",function(event){
+        let input = document.getElementById("userInput").value;
+        if(input === ""){
+            alert("Field can not empty!");
+          event.preventDefault();
+    
+        }
+          else if(input ==="shubham"){
+            alert("name is shubham");
+        
+          }
+
+          else{
+            alert("sucessfull")
+          }
+    });
+ </script>
+
+  <form id="emailForm">
+   <input type="email" id="emailInput" placeholder="Enter Email">
+   <button type="submit">Submit</button>
+ </form>
+ <script>
+   document.getElementById("emailForm").addEventListener("submit", function(event) {
+     let email = document.getElementById("emailInput").value;
+     let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+     if (!email.match(pattern)) {
+       alert("Enter a valid email!");
+       event.preventDefault();
+     }
+   });
+ </script>
+
+ <form id="passwordForm">
+   <input type="password" id="passwordInput" placeholder="Enter Password">
+   <button type="submit">Submit</button>
+ </form>
+ <script>
+   document.getElementById("passwordForm").addEventListener("submit", function(event) {
+     let password = document.getElementById("passwordInput").value;
+     if (password.length < 6) {
+       alert("Password must be at least 6 characters long!");
+       event.preventDefault();
+     }
+   });
+ </script>
+
+</body>
+</html>

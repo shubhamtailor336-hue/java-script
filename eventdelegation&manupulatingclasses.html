@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event delegation</title>
+</head>
+<body>
+    
+     <ul id="itemList">
+   <li class="item">Item 1</li>
+   <li class="item">Item 2</li>
+   <li class="item">Item 3</li>
+ </ul>
+ <script>
+   document.getElementById("itemList").addEventListener("click", function(event) {
+     if (event.target.classList.contains("item")) {
+       alert("Clicked on: " + event.target.textContent);
+     }
+   });
+ </script>
+
+    
+ <div id="buttonContainer">
+   <button class="btn">Button 1</button>
+   <button class="btn">Button 2</button>
+ </div>
+ <script>
+   document.getElementById("buttonContainer").addEventListener("click", function(event) {
+     if (event.target.classList.contains("btn")) {
+       event.target.style.backgroundColor = "green";
+     }
+   });
+ </script>
+  <div id="formContainer">
+   <input type="text" class="input-field" placeholder="Type here">
+ </div>
+ <script>
+   document.getElementById("formContainer").addEventListener("input", function(event) {
+     if (event.target.classList.contains("input-field")) {
+       console.log("User typed: " + event.target.value);
+     }
+   });
+ </script>
+
+ <button id="myButton">Click Me</button>
+ <script>
+   document.getElementById("myButton").addEventListener("click", function() {
+     this.classList.add("clicked");
+   });
+ </script>
+ <style>
+   .clicked { background-color: red; color: white; }
+ </style>
+
+ <div id="hoverBox" class="highlight">Hover over me</div>
+ <script>
+   document.getElementById("hoverBox").addEventListener("mouseover", function() {
+     this.classList.remove("highlight");
+   });
+ </script>
+ <style>
+   .highlight { background-color: yellow; }
+ </style>
+
+ <button id="darkModeBtn">Toggle Dark Mode</button>
+ <script>
+   document.getElementById("darkModeBtn").addEventListener("click", function() {
+     document.body.classList.toggle("dark-mode");
+   });
+ </script>
+ <style>
+   .dark-mode { background-color:black; color: white; }
+ </style>
+
+</body>
+</html>

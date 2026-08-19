@@ -1,0 +1,158 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Save Form Data</title>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <label>Name:</label>
+  <input type="text" id="name" placeholder="Enter name"><br><br>
+
+  <label>Email:</label>
+  <input type="email" id="email" placeholder="Enter email"><br><br>
+
+  <button onclick="saveForm()">Save</button>
+
+  <script>
+    function saveForm() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+
+      localStorage.setItem("formData", JSON.stringify({ name, email }));
+      alert("Form data saved!");
+    }
+
+    window.onload = function() {
+      let savedData = JSON.parse(localStorage.getItem("formData"));
+      if (savedData) {
+        document.getElementById("name").value = savedData.name;
+        document.getElementById("email").value = savedData.email;
+      }
+    };
+  </script>
+</body>
+</html>
+ -->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notes App - Local Storage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      text-align: center;
+      margin: 40px;
+    }
+    h2 {
+      color: #333;
+    }
+    textarea {
+      width: 80%;
+      height: 100px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      resize: none;
+    }
+    button {
+      margin: 10px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .add-btn { background-color: #28a745; color: white; }
+    .clear-btn { background-color: #dc3545; color: white; }
+    .note {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 10px auto;
+      width: 80%;
+      text-align: left;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .note button {
+      float: right;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>📝 My Notes App</h2>
+  <textarea id="noteInput" placeholder="Write your note here..."></textarea><br>
+  <button class="add-btn" onclick="addNote()">Add Note</button>
+  <button class="clear-btn" onclick="clearAll()">Clear All Notes</button>
+
+  <div id="notesContainer"></div>
+
+  <script>
+    // Function to add a new note
+    function addNote() {
+      let noteText = document.getElementById("noteInput").value;
+      if (noteText.trim() === "") {
+        alert("Please write something before saving!");
+        return;
+      }
+
+      let notes = JSON.parse(localStorage.getItem("notes")) || [];
+      notes.push(noteText);
+      localStorage.setItem("notes", JSON.stringify(notes));
+
+      document.getElementById("noteInput").value = "";
+      displayNotes();
+    }
+
+    // Function to display all notes
+    function displayNotes() {
+      let notes = JSON.parse(localStorage.getItem("notes")) || [];
+      let container = document.getElementById("notesContainer");
+      container.innerHTML = "";
+
+      notes.forEach((note, index) => {
+        container.innerHTML += `
+          <div class="note">
+            <p>${note}</p>
+            <button onclick="deleteNote(${index})">🗑️ Delete</button>
+            <button onclick="editNote(${index})">✏️ Edit</button>
+          </div>
+        `;
+      });
+    }
+
+    // Function to delete a note
+    function deleteNote(index) {
+      let notes = JSON.parse(localStorage.getItem("notes"));
+      notes.splice(index, 1);
+      localStorage.setItem("notes", JSON.stringify(notes));
+      displayNotes();
+    }
+
+    // Function to edit a note
+    function editNote(index) {
+      let notes = JSON.parse(localStorage.getItem("notes"));
+      let newText = prompt("Edit your note:", notes[index]);
+      if (newText !== null) {
+        notes[index] = newText;
+        localStorage.setItem("notes", JSON.stringify(notes));
+        displayNotes();
+      }
+    }
+
+    // Function to clear all notes
+    function clearAll() {
+      if (confirm("Are you sure you want to delete all notes?")) {
+        localStorage.removeItem("notes");
+        displayNotes();
+      }
+    }
+
+    // Display notes when page loads
+    window.onload = displayNotes;
+  </script>
+</body>
+</html>
