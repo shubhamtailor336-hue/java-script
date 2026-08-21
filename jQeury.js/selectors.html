@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery selectors</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   
+</head>
+<style>
+    .change {
+  font-weight: bolder;
+  color: red;
+}
+
+.box1{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+  height: 100px;
+  width: 100px;
+ display: inline-block;
+ padding: 50px;
+ margin: 10px; 
+ } 
+
+.active{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+
+
+</style>
+<body>
+
+<h1 id="mainHeading">Welcome!</h1>
+
+    <p id="para">This is a paragraph</p>
+    <button id="btn">
+         click me
+    </button>
+    <p class="info">This is important info.</p>
+    <p class="info">Read this carefully.</p>
+
+    <p>Paragraph one</p>
+<p>Paragraph two</p>
+
+
+<input type="text" placeholder="Enter name">
+<input type="password">
+
+ <br><br><br><br>
+
+
+ <h2 id="formtitle">Register now</h2>
+ <input type="text" class="inputfi  eld" placeholder="Enter your name">
+ <input type="email" class="inputfield" placeholder="Enter your email">
+ <button id="registerbtn">Register</button>
+ <p id="msg" style="display: none;">🎉 You are registered!</p>
+
+ <br><br><br>
+
+   <div id="box">
+    Hello, I am a box!
+  </div>
+  <br>
+  <button id="hideBtn">Hide</button>
+  <button id="showBtn">Show</button>
+
+  <input type="text" class="form" placeholder="Enter your name">
+  <button class="btn1"> click me!</button>
+  <p id="masage" style="display: none;">🎉 You are registered!</p>
+  
+<br><br><br>
+
+    <div class="box1">box 1</div>
+    <div class="box1">box 2</div>
+    <div class="box1"> box 3</div>
+    <div class="box1"> box 4</div>
+
+    <button class="show"> box show</button>
+    <button class="hide"> box hide</button>
+
+
+    <br> <br> <br> <br>
+
+    <p id="para1">Hello World</p>
+<button id="btn2">Fade Out</button>
+<button id="btn3"> Fade In </button>
+<button class="btn4">toggelefade</button>
+
+      <script src="selector.js"></script>
+</body>
+</html>
